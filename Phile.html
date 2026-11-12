@@ -113,6 +113,14 @@
             object-fit: contain;
         }
         .priority-item span { line-height: 1.5; font-size: 1rem; opacity: 0.9; }
+        .priority-badge {
+            width: 65px; height: 65px; flex-shrink: 0; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            background: #22A35A; color: #ffffff;
+            font-family: 'Press Start 2P', cursive; font-size: 0.85rem;
+            box-shadow: 0 0 18px #22A35A59;
+        }
+        .priority-item span.priority-badge { opacity: 1; line-height: 1; font-size: 0.85rem; }
 
         /* PROTOTYPE BUTTON */
         .btn-prototype {
@@ -164,6 +172,7 @@
             .hero-title-frame h1 { font-size: 1.8rem; }
             .priority-item { gap: 20px; }
             .priority-icon { width: 50px; height: 50px; }
+            .priority-badge, .priority-item span.priority-badge { width: 50px; height: 50px; font-size: 0.7rem; }
             .nav-glass { padding: 12px 25px; gap: 20px; font-size: 0.65rem; }
         }
     </style>
@@ -174,7 +183,7 @@
         <div class="nav-glass">
             <a href="index.html">Home</a>
             <a href="index.html#about">About</a>
-            <a href="index.html#cases">Cases Studies</a>
+            <a href="index.html#cases">Case Studies</a>
             <a href="#contact">Contact</a>
         </div>
     </nav>
@@ -207,7 +216,7 @@
         <section id="About-Project">
             <h2>About Project</h2>
             <div class="glass-card">
-                <p>This project focuses on designing the prescription ordering flow for the Ekuphileni Clinic app. Whilst the app also allows patients to book doctor appointments and schedule house calls, the primary goal of this project was to create a simple, intuitive, and seamless experience to ordering and paying for prescriptions. Thus ensuring that even patients who are severely ill can access their medication without leaving their homes. I worked as the UX designer for this project, collaborating with UI Designs to bring this project to life, I was in charge of understanding the users and clearly mapping out their experience though the prescription purchasing process.</p>
+                <p>This project focuses on designing the prescription ordering flow for the Ekuphileni Clinic app. Whilst the app also allows patients to book doctor appointments and schedule house calls, the primary goal of this project was to create a simple, intuitive and seamless experience for ordering and paying for prescriptions, ensuring that even patients who are severely ill can access their medication without leaving their homes. I worked as the UX designer on this project, collaborating with UI designers to bring it to life. I was in charge of understanding the users and clearly mapping out their experience through the prescription purchasing process.</p>
             </div>
         </section>
 
@@ -235,7 +244,7 @@
             <div class="glass-card">
                 <ul class="priority-list">
                     <li class="priority-item">
-                        <img src="assets/Phile/P0.svg" class="priority-icon" alt="P0">
+                        <span class="priority-badge">P1</span>
                         <span>Design a purchasing flow that users can seamlessly navigate through without friction and successfully order their prescriptions.</span>
                     </li>
                     
