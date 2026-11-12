@@ -183,6 +183,12 @@
         .glass-card h3 { font-weight: normal; margin-top: 0; }
         .note { font-family: 'Open Sans', sans-serif; font-size: 0.8rem; opacity: 0.65; }
         @media (max-width: 768px) { .stats-grid { grid-template-columns: 1fr 1fr; } .flow-arrow { display: none; } }
+        .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 40px 0; text-align: left; }
+        .gallery figure { margin: 0; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: 14px; }
+        .gallery img { width: 100%; border-radius: 10px; display: block; }
+        .gallery figcaption { font-family: 'Open Sans', sans-serif; font-size: 0.85rem; opacity: 0.85; margin-top: 12px; }
+        .gallery figcaption b { display: block; font-family: Georgia, serif; font-weight: normal; font-size: 1rem; margin-bottom: 4px; opacity: 1; }
+        @media (max-width: 768px) { .gallery { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -268,7 +274,7 @@
             <div class="flow">
                 <div class="flow-step"><small>01</small>Customer opens the referral page or banner and copies / shares their link</div>
                 <div class="flow-arrow">&rarr;</div>
-                <div class="flow-step"><small>02</small>Friend signs up with the invite link</div>
+                <div class="flow-step"><small>02</small>Friend opens the link and signs up &mdash; referral code already filled in</div>
                 <div class="flow-arrow">&rarr;</div>
                 <div class="flow-step"><small>03</small>Welcome discount is reserved for the friend's first order</div>
                 <div class="flow-arrow">&rarr;</div>
@@ -285,9 +291,22 @@
             <div class="glass-card">
                 <ul class="plain">
                     <li><b>Reserved, then redeemed.</b> A discount is reserved against an order as soon as the customer ticks it at checkout, and only redeemed once the order is confirmed &mdash; so a cancelled order releases the discount instead of burning it.</li>
-                    <li><b>Movable discounts.</b> If a customer applied their discount to the wrong order, they can move it to another one after a confirmation step, without contacting support.</li>
-                    <li><b>Activity view.</b> Referrers can see who joined through their link and whether each referral has turned into a reward yet, which answers the "did it work?" question before it reaches customer service.</li>
-                    <li><b>Measurable from day one.</b> I defined tracking for every step &mdash; opening the referral modal, copying and sharing the link, sign-ups, reservations, redemptions and activations &mdash; so the funnel could be read in PostHog from launch.</li>
+                    <li><b>Movable discounts.</b> If a customer applied their        <section>
+            <h2>Final Designs</h2>
+            <div class="gallery">
+                <figure><img src="assets/Referral/01-menu.png" alt="Entry point" loading="lazy"><figcaption><b>Entry point</b>A new "Refer a friend" option in the menu tab, so the program is always one tap away.</figcaption></figure>
+                <figure><img src="assets/Referral/02-refer-tab.png" alt="Refer tab" loading="lazy"><figcaption><b>Refer tab</b>The customer's personal link, ready to copy or share straight to WhatsApp.</figcaption></figure>
+                <figure><img src="assets/Referral/03-activity-tab.png" alt="Referral activity tab" loading="lazy"><figcaption><b>Referral activity tab</b>Who joined through the link, and which referrals have turned into a reward.</figcaption></figure>
+                <figure><img src="assets/Referral/04-referee-signup.png" alt="Friend's sign-up" loading="lazy"><figcaption><b>Friend's sign-up</b>Opening an invite link pre-fills the referral code, so the friend has nothing to type.</figcaption></figure>
+                <figure><img src="assets/Referral/05-card-first-order.png" alt="Checkout card: first order discount" loading="lazy"><figcaption><b>Checkout card: first order discount</b>The friend's welcome discount, offered on their first order.</figcaption></figure>
+                <figure><img src="assets/Referral/06-card-20.png" alt="Checkout card: 20% discount" loading="lazy"><figcaption><b>Checkout card: 20% discount</b>An earned reward, applied with a single checkbox.</figcaption></figure>
+                <figure><img src="assets/Referral/07-card-on-other-order.png" alt="Checkout card: already applied" loading="lazy"><figcaption><b>Checkout card: already applied</b>"Your 20% discount is on order #…" tells the customer where their discount is instead of silently hiding it.</figcaption></figure>
+                <figure><img src="assets/Referral/08-active-discount.png" alt="Active discount on an order" loading="lazy"><figcaption><b>Active discount on an order</b>How an applied discount shows up on the order.</figcaption></figure>
+                <figure><img src="assets/Referral/09-move-discount.png" alt="Move discount" loading="lazy"><figcaption><b>Move discount</b>The confirmation window for moving a discount to a different order.</figcaption></figure>
+            </div>
+        </section>
+
+d sharing the link, sign-ups, reservations, redemptions and activations &mdash; so the funnel could be read in PostHog from launch.</li>
                 </ul>
             </div>
         </section>
