@@ -113,6 +113,14 @@
             object-fit: contain;
         }
         .priority-item span { line-height: 1.5; font-size: 1rem; opacity: 0.9; }
+        .priority-badge {
+            width: 65px; height: 65px; flex-shrink: 0; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            background: #FFC21A; color: #1a1a1a;
+            font-family: 'Press Start 2P', cursive; font-size: 0.85rem;
+            box-shadow: 0 0 18px rgba(255, 194, 26, 0.35);
+        }
+        .priority-item span.priority-badge { opacity: 1; line-height: 1; font-size: 0.85rem; }
 
         /* PROTOTYPE BUTTON */
         .btn-prototype {
@@ -164,6 +172,7 @@
             .hero-title-frame h1 { font-size: 1.8rem; }
             .priority-item { gap: 20px; }
             .priority-icon { width: 50px; height: 50px; }
+            .priority-badge, .priority-item span.priority-badge { width: 50px; height: 50px; font-size: 0.7rem; }
             .nav-glass { padding: 12px 25px; gap: 20px; font-size: 0.65rem; }
         }
 
@@ -254,15 +263,15 @@
             <div class="glass-card">
                 <ul class="priority-list">
                     <li class="priority-item">
-                        <img src="assets/Phile/P0.svg" class="priority-icon" alt="P0">
+                        <span class="priority-badge">P1</span>
                         <span>Make sharing effortless on the channel customers already use &mdash; WhatsApp &mdash; with a personal link instead of a code to copy out by hand.</span>
                     </li>
                     <li class="priority-item">
-                        <img src="assets/Phile/P1.svg" class="priority-icon" alt="P1">
+                        <span class="priority-badge">P2</span>
                         <span>Reward real customers, not sign-ups: the referrer only earns once their friend completes a first order, which protects the business from abuse.</span>
                     </li>
                     <li class="priority-item">
-                        <img src="assets/Phile/P2.svg" class="priority-icon" alt="P2">
+                        <span class="priority-badge">P3</span>
                         <span>Keep discounts transparent and in the customer's control &mdash; visible on their account, applied by checkbox, and movable to another order if plans change.</span>
                     </li>
                 </ul>
