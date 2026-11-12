@@ -245,7 +245,7 @@
         <section id="solution">
             <h2>The Solution</h2>
             <div class="glass-card">
-                <p>A two-sided referral program built into the account area. Every customer gets a personal invite link they can share in one tap. A friend who signs up with it gets a welcome discount on their first order; once that order goes through, the person who referred them earns a reward discount of their own. Both discounts live on the customer's account and are applied with a simple checkbox at checkout, so nobody has to remember or type a code.</p>
+                <p>"Give 20% to Get 20%" &mdash; a two-sided referral program built into the web app. Every customer gets a personal invite link they can copy or share straight to WhatsApp. A friend who signs up with it gets 20% off their first delivery; once that first order is paid, the person who referred them earns 20% off delivery on an order of their choice (both capped at E100). Discounts live on the customer's account and are applied with a checkbox when they request a quote, so nobody has to remember or type a code.</p>
             </div>
         </section>
 
@@ -272,15 +272,15 @@
         <section>
             <h2>Referral Flow</h2>
             <div class="flow">
-                <div class="flow-step"><small>01</small>Customer opens the referral page or banner and copies / shares their link</div>
+                <div class="flow-step"><small>01</small>Customer opens "Refer a friend" and copies or shares their link to WhatsApp</div>
                 <div class="flow-arrow">&rarr;</div>
                 <div class="flow-step"><small>02</small>Friend opens the link and signs up &mdash; referral code already filled in</div>
                 <div class="flow-arrow">&rarr;</div>
-                <div class="flow-step"><small>03</small>Welcome discount is reserved for the friend's first order</div>
+                <div class="flow-step"><small>03</small>Friend gets 20% off their first delivery</div>
                 <div class="flow-arrow">&rarr;</div>
-                <div class="flow-step"><small>04</small>First order completes &rarr; referral activates</div>
+                <div class="flow-step"><small>04</small>Friend's first order is paid &rarr; referral becomes active</div>
                 <div class="flow-arrow">&rarr;</div>
-                <div class="flow-step"><small>05</small>Referrer earns a reward discount, applied at checkout</div>
+                <div class="flow-step"><small>05</small>Referrer earns 20% off delivery on an order of their choice</div>
             </div>
             <!-- Add your Figma user flow export here, e.g.:
             <img src="assets/Referral/userflow.png" alt="Referral user flow" class="diagram-img"> -->
@@ -290,26 +290,27 @@
             <h2>Designing the Logic</h2>
             <div class="glass-card">
                 <ul class="plain">
-                    <li><b>Reserved, then redeemed.</b> A discount is reserved against an order as soon as the customer ticks it at checkout, and only redeemed once the order is confirmed &mdash; so a cancelled order releases the discount instead of burning it.</li>
-                    <li><b>Movable discounts.</b> If a customer applied their discount to the wrong order, they can move it to another one after a confirmation step, without contacting support.</li>
-                    <li><b>Activity view.</b> Referrers can see who joined through their link and whether each referral has turned into a reward yet, which answers the "did it work?" question before it reaches customer service.</li>
+                    <li><b>A reward that protects the margin.</b> The discount comes off the delivery fee from our South African warehouse, not the goods, and is capped at E100 &mdash; generous enough to motivate, without putting product margins at risk.</li>
+                    <li><b>Reserved, then redeemed.</b> A discount is reserved against an order as soon as the customer ticks it, and only redeemed once that order is paid &mdash; so a cancelled order releases the discount instead of burning it.</li>
+                    <li><b>Movable discounts, with honest consequences.</b> If the discount sits on an order that isn't paid yet, the customer can move it themselves. The confirmation spells out that the old order will be cancelled and how to get it back, so nothing happens by surprise. Anywhere else, the card says exactly which order holds the discount and links to WhatsApp support.</li>
+                    <li><b>Activity view.</b> Referrers can see who joined through their link and whether each one is "Signed up" or "Active" (first order paid), which answers the "did it work?" question before it reaches customer service.</li>
                     <li><b>Measurable from day one.</b> I defined tracking for every step &mdash; opening the referral modal, copying and sharing the link, sign-ups, reservations, redemptions and activations &mdash; so the funnel could be read in PostHog from launch.</li>
                 </ul>
             </div>
         </section>
 
         <section>
-            <h2>Final Designs</h2>
+            <h2 id="final-designs">Final Designs</h2>
             <div class="gallery">
-                <figure><img src="assets/Referral/01-menu-refer-a-friend.jpg" alt="Entry point" loading="lazy"><figcaption><b>Entry point</b>A new "Refer a friend" option in the menu tab, so the program is always one tap away.</figcaption></figure>
-                <figure><img src="assets/Referral/02-referral-refer-tab.jpg" alt="Refer tab" loading="lazy"><figcaption><b>Refer tab</b>The customer's personal link and code, ready to copy or share straight to WhatsApp.</figcaption></figure>
-                <figure><img src="assets/Referral/03-referral-activity-tab.jpg" alt="Referral activity tab" loading="lazy"><figcaption><b>Referral activity tab</b>Who joined through the link, and which referrals have turned into a reward.</figcaption></figure>
+                <figure><img src="assets/Referral/01-menu-refer-a-friend.jpg" alt="Entry point" loading="lazy"><figcaption><b>Entry point</b>"Refer a friend" sits in the main menu next to Orders and Delivery Fees, so the program is always one tap away.</figcaption></figure>
+                <figure><img src="assets/Referral/02-referral-refer-tab.jpg" alt="Refer tab" loading="lazy"><figcaption><b>Refer tab</b>"Give 20% to Get 20%" up top, three plain-language steps, then the invite link with one-tap Copy and WhatsApp sharing.</figcaption></figure>
+                <figure><img src="assets/Referral/03-referral-activity-tab.jpg" alt="Referral activity tab" loading="lazy"><figcaption><b>Referral activity tab</b>Each referred friend with a clear status: "Signed up", or "Active" once their first order is paid.</figcaption></figure>
                 <figure><img src="assets/Referral/04-signup-autofilled-code.jpg" alt="Friend's sign-up" loading="lazy"><figcaption><b>Friend's sign-up</b>Opening an invite link pre-fills the referral code, so the friend has nothing to type.</figcaption></figure>
-                <figure><img src="assets/Referral/05-checkout-first-order-discount.jpg" alt="Checkout card: first order discount" loading="lazy"><figcaption><b>Checkout card: first order discount</b>The friend's welcome discount, offered on their first order.</figcaption></figure>
-                <figure><img src="assets/Referral/06-checkout-20-discount.jpg" alt="Checkout card: 20% discount" loading="lazy"><figcaption><b>Checkout card: 20% discount</b>An earned reward, applied with a single checkbox.</figcaption></figure>
-                <figure><img src="assets/Referral/07-checkout-discount-on-other-order.jpg" alt="Checkout card: already applied" loading="lazy"><figcaption><b>Checkout card: already applied</b>Tells the customer which order their discount is on, instead of it silently disappearing.</figcaption></figure>
-                <figure><img src="assets/Referral/08-order-active-discount.jpg" alt="Active discount on an order" loading="lazy"><figcaption><b>Active discount on an order</b>How an applied discount shows up on the order.</figcaption></figure>
-                <figure><img src="assets/Referral/09-move-discount-popup.jpg" alt="Move discount" loading="lazy"><figcaption><b>Move discount</b>The confirmation window for moving a discount to a different order.</figcaption></figure>
+                <figure><img src="assets/Referral/05-checkout-first-order-discount.jpg" alt="Checkout card: first order discount" loading="lazy"><figcaption><b>Checkout card: first order discount</b>The friend's welcome discount, pre-ticked on the quote screen, with the E100 cap stated up front.</figcaption></figure>
+                <figure><img src="assets/Referral/06-checkout-20-discount.jpg" alt="Checkout card: referrer reward" loading="lazy"><figcaption><b>Checkout card: referrer reward</b>Earned rewards stack up, and the card says how many are available. One tick applies one.</figcaption></figure>
+                <figure><img src="assets/Referral/07-checkout-discount-on-other-order.jpg" alt="Checkout card: already applied" loading="lazy"><figcaption><b>Checkout card: already applied</b>If the discount is already on another order, the card names that order and offers WhatsApp help instead of hiding the discount.</figcaption></figure>
+                <figure><img src="assets/Referral/08-order-active-discount.jpg" alt="Active discount on an order" loading="lazy"><figcaption><b>Active discount on an order</b>My Orders shows a "20% off delivery applied" tag, and a cancelled order records where its discount moved.</figcaption></figure>
+                <figure><img src="assets/Referral/09-move-discount-popup.jpg" alt="Move discount" loading="lazy"><figcaption><b>Move discount</b>Moving a discount off an unpaid order cancels that order, so the confirmation says so plainly and offers "No, keep full delivery".</figcaption></figure>
             </div>
         </section>
 
@@ -322,7 +323,7 @@
                 <div class="stat"><b>61%</b><span>of sign-ups came through a referral in the most recent week</span></div>
                 <div class="stat"><b>100%</b><span>of tracked link shares went out on WhatsApp</span></div>
                 <div class="stat"><b>8</b><span>referral sign-ups on Family Fun Day alone</span></div>
-                <div class="stat"><b>7</b><span>discounts redeemed on real orders (5 welcome, 2 referrer rewards)</span></div>
+                <div class="stat"><b>7</b><span>discounts redeemed on paid orders (5 welcome, 2 referrer rewards)</span></div>
             </div>
             <p class="note">Data from PostHog, 19 Oct &ndash; 12 Nov 2026. The sign-up increase also overlaps with the Family Fun Day activation and other marketing, so it isn't attributed to referrals alone.</p>
         </section>
